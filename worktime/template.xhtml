@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head profile="http://microformats.org/wiki/hresume-profile http://microformats.org/wiki/hcalendar-profile http://www.w3.org/2006/03/hcard">
+        <title>Today</title>
+        <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
+        <meta name="author" content="Victor Engmark"/>
+        <style type="text/css" media="all" title="Default">
+.unfinished {
+    /* For reviews */
+    border: medium solid red !important;
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+body {
+    font: 85%% "Palatino Linotype", Times, serif;
+    padding: 1em 0 1em 0;
+    }
+
+#display_toggle {
+    float: right;
+    width: 0;
+    white-space: nowrap;
+    }
+
+#contents {
+    width: 80ex;
+    margin: 0 auto 0 auto;
+    }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption,
+th {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    page-break-after: avoid;
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+    }
+
+h1 {
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 0;
+    }
+
+h2,
+#about .n {
+    font-size: 1.15em;
+    }
+
+h3,
+caption {
+    font-size: 1em;
+    }
+
+p {
+    margin-top: 0.75em;
+    margin-bottom: 0;
+    text-align: justify;
+    page-break-inside: avoid;
+    }
+
+ul,
+ol {
+    margin-top: 0;
+    padding-left: 2.5em;
+    margin-bottom: 1em;
+    }
+
+#referees ul {
+    list-style: none;
+    padding-left: 0;
+    }
+
+table {
+    width: 100%%;
+    border-collapse: collapse;
+    }
+
+caption {
+    text-align: left;
+    }
+
+th,
+td {
+    text-align: left;
+    border: 1px solid #999;
+    padding-top: 0.1ex;
+    padding-right: 0.5ex;
+    padding-bottom: 0.1ex;
+    padding-left: 0.5ex;
+    }
+
+.skill_list td {
+    width: 50%%;
+    }
+
+dl {
+    margin-top: 0;
+    margin-bottom: 1em;
+    }
+
+dt {
+    white-space: nowrap;
+    float: left;
+    }
+
+dd {
+    margin-left: 17ex;
+    }
+
+abbr {
+    border-bottom: 1px dotted #333;
+    cursor: help;
+    }
+
+abbr.simple,
+.repeated {
+    border-bottom: none;
+    }
+
+abbr.bday,
+.simple,
+.repeated {
+    border-bottom: none;
+    cursor: auto;
+    }
+
+a,
+a * {
+    cursor: pointer !important;
+    }
+
+noscript div {
+    display: inline;
+    }
+
+#about * {
+    text-align: center;
+    }
+
+#about h2 {
+    display: none;
+    }
+
+#about #personal * {
+    text-align: left; /* Override centering */
+    }
+
+#about .n {
+    margin-bottom: 0;
+    }
+
+.vcard .type,
+.vcard .class,
+.honorific-prefix {
+    display: none;
+    }
+
+.education table {
+    width: auto;
+    }
+
+#languages td {
+    width: 20%%;
+    }
+
+.mother-tongue {
+    background-color: #CCC;
+    }
+
+#mth {
+    border-bottom: none;
+    }
+
+#mother-tongue {
+    border-top: none;
+    }
+
+th {
+    width: 0;
+    }
+
+a.rel-tag {
+    text-decoration: none;
+    color: black;
+    }
+
+.tertiary {
+    display: none;
+    }
+        </style>
+        <style type="text/css" media="all" title="Default"></style>
+        <style type="text/css" media="print" title="Default">
+#contents {
+    width: 98%%;
+    }
+
+* {
+    white-space: normal;
+    }
+
+body {
+    padding: 0;
+    font-size: 75%%;
+    }
+
+h1 {
+    font-size: 1.15em;
+    }
+
+h2 {
+    font-size: 1.1em;
+    }
+
+h3,
+caption {
+    font-size: 1em;
+    }
+
+th,
+td {
+    white-space: nowrap;
+    }
+
+.skill_list {
+    width: 50%%;
+}
+
+a {
+    text-decoration: none;
+    color: black !important;
+    }
+
+a:after {
+    display: inline;
+    content: " &lt;" attr(href) "&gt;";
+    white-space: nowrap;
+    }
+
+a.email:after {
+    display: inline;
+    content: " &lt;" attr(title) "&gt;";
+    }
+
+abbr {
+    border-bottom: none;
+    }
+
+abbr:after {
+    display: inline;
+    content: " (" attr(title) ")";
+    }
+
+.simple:after,
+.repeated:after,
+#about .email:after,
+.rel-tag:after {
+    content: "";
+    }
+
+dd {
+    margin-left: 21ex;
+    }
+
+.meta_markup,
+#display_toggle {
+    display: none;
+    }
+        </style>
+    </head>
+    <body>
+        <div id="contents">
+            <h1>%(date)s</h1>
+            
+            <div id="hours">
+                <h2>Hours</h2>
+                <table>
+                    <tr>
+                        <th>HH:</th>
+                        <th>MM:</th>
+                        <th>Reference</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="6"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

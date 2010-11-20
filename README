@@ -1,0 +1,5 @@
+worktime - Generate daily log web page
+
+Installation: sudo easy_install worktime
+
+Upgrade: sudo easy_install -U worktime
