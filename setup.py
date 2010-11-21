@@ -11,7 +11,7 @@ setup(
     version = '0.1',
     description = 'Generate XHTML daily calendar',
     long_description = module_doc,
-    url = 'http://',
+    url = 'http://github.com/l0b0/worktime',
     keywords = 'log calendar generator',
     packages = find_packages(exclude=['tests']),
     install_requires = [],
