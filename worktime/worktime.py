@@ -59,10 +59,9 @@ __license__ = 'GPL v3 or newer'
 from calendar import monthrange
 from datetime import date, timedelta
 from getopt import getopt, GetoptError
-from os.path import dirname, exists, join, split
+from os.path import dirname, exists, join
 from signal import signal, SIGPIPE, SIG_DFL
 import sys
-import warnings
 
 signal(SIGPIPE, SIG_DFL)
 """Avoid 'Broken pipe' message when canceling piped command."""
@@ -131,7 +130,6 @@ def main(argv=None):
     start = date.today()
     end = start + timedelta(days = 1)
     days = range(7)
-    verbose = False
 
     try:
         opts, args = getopt(
@@ -143,8 +141,7 @@ def main(argv=None):
                 'days=',
                 'weekdays',
                 'weekends',
-                'help',
-                'verbose'])
+                'help'])
     except GetoptError, err:
         sys.stderr.write(str(err) + '\n')
         return 2
