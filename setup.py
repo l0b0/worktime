@@ -15,6 +15,7 @@ setup(
     keywords = 'log calendar generator',
     packages = find_packages(exclude=['tests']),
     install_requires = [],
+    include_package_data = True,
     entry_points = {
         'console_scripts': ['worktime = worktime.worktime:main']},
     classifiers = [

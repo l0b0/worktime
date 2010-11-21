@@ -112,8 +112,9 @@ def worktime(start, end, days, directory):
         current_printable = current.strftime('%A ' + DATE_FORMAT)
 
         # Write to template
-        output_file.write(template % {
-        'date': current_printable})
+        output_file.write(
+            template % {
+                'date': current_printable})
 
 
 def usage():
@@ -121,7 +122,7 @@ def usage():
     print __doc__
 
 
-def main(argv = None):
+def main(argv=None):
     """Argument handling."""
 
     if argv is None:
