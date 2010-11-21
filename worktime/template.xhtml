@@ -6,19 +6,8 @@
         <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
         <meta name="author" content="Victor Engmark"/>
         <style type="text/css" media="all" title="Default">
-* {
-    margin: 0;
-    padding: 0;
-    }
-
 body {
-    font: 85%% "Palatino Linotype", Times, serif;
-    padding: 1em 0 1em 0;
-    }
-
-#contents {
-    width: 100%%;
-    margin: 0 auto 0 auto;
+    font-family: "Palatino Linotype", Times, serif;
     }
 
 h1,
@@ -61,8 +50,11 @@ td {
     }
 
 #log {
-    float: left;
-    width: 30%%;
+    width: 20em;
+    }
+
+.wide {
+    width: 20em;
     }
 
 #tasks,
@@ -77,17 +69,8 @@ td {
         </style>
         <style type="text/css" media="all" title="Default"></style>
         <style type="text/css" media="print" title="Default">
-#contents {
-    width: 98%%;
-    }
-
 * {
     white-space: normal;
-    }
-
-body {
-    padding: 0;
-    font-size: 75%%;
     }
 
 h1 {
@@ -132,6 +115,9 @@ a.email:after {
             <div id="log">
                 <h2>Log</h2>
                 <table>
+                    <col/>
+                    <col/>
+                    <col class="wide"/>
                     <tr>
                         <th>Hour</th>
                         <th>Minute</th>
