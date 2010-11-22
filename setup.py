@@ -8,7 +8,7 @@ from worktime.worktime import __author__ as module_author, __doc__ as module_doc
 
 setup(
     name = 'worktime',
-    version = '0.1',
+    version = '0.2',
     description = 'Generate XHTML daily calendar',
     long_description = module_doc,
     url = 'http://github.com/l0b0/worktime',
