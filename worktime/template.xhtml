@@ -6,37 +6,40 @@
         <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
         <meta name="author" content="Victor Engmark"/>
         <style type="text/css" media="all" title="Default">
+* {
+    margin: 0;
+    padding: 0;
+    }
+
 body {
+    /* Readable small font */
     font-family: "Palatino Linotype", Times, serif;
+    font-size: 10pt;
     }
 
 h1,
 h2,
 th,
 td {
+    /* Stylish big font */
     font-family: "Trebuchet MS", Verdana, sans-serif;
-    page-break-after: avoid;
-    margin-top: 0.8em;
-    margin-bottom: 0.2em;
     font-weight: bold;
     }
 
 h1 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-align: center;
     margin-top: 0;
     }
 
 h2 {
-    font-size: 1.15em;
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+    font-size: 1.1em;
     }
 
 table {
     border-collapse: collapse;
-    }
-
-caption {
-    text-align: left;
     }
 
 th,
@@ -51,57 +54,34 @@ td {
     }
 
 #log {
-    width: 20em;
-    clear: none;
     float: left;
+    margin-right: 1em;
+    }
+
+col.reference {
+    width: 8em;
     }
 
 col.time {
     width: 2em;
-}
+}   
 
-col.wide {
-    width: 10em;
-    }
+col.title {
+    width: 30em;
+}
 
 .core {
     /* Core hours */
     background: #DDD;
     }
 
-#tasks {
-    float: right;
-    width: 10%%;
-    }
-
-#tasks {
-    display: block;
+#footer {
+    margin-top: 80em;
+    font-size: 0.7em;
     }
         </style>
         <style type="text/css" media="all" title="Default"></style>
         <style type="text/css" media="print" title="Default">
-* {
-    white-space: normal;
-    }
-
-h1 {
-    font-size: 1.15em;
-    }
-
-h2 {
-    font-size: 1.1em;
-    }
-
-h3,
-caption {
-    font-size: 1em;
-    }
-
-th,
-td {
-    white-space: nowrap;
-    }
-
 a {
     text-decoration: none;
     color: black !important;
@@ -128,7 +108,7 @@ a.email:after {
                 <table>
                     <col class="time"/>
                     <col class="time"/>
-                    <col class="wide"/>
+                    <col class="reference"/>
                     <tr>
                         <th colspan="2">HH:MM</th>
                         <th>Reference</th>
@@ -148,31 +128,6 @@ a.email:after {
                     </tr>
                     <tr>
                         <td rowspan="3"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="6">8</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td></td>
                     </tr>
@@ -384,41 +339,16 @@ a.email:after {
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr class="core">
+                    <tr>
                         <td rowspan="6">17</td>
-                        <td></td>
-                        <td></td>
+                        <td class="core"></td>
+                        <td class="core"></td>
                     </tr>
                     <tr class="core">
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="core">
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="6">18</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td></td>
                     </tr>
@@ -466,10 +396,13 @@ a.email:after {
             <div id="tasks">
                 <h2>Tasks</h2>
                 <table>
+                    <col class="reference"/>
+                    <col class="title"/>
+                    <col class="time"/>
                     <tr>
                         <th>Reference</th>
                         <th>Title</th>
-                        <th>Total time</th>
+                        <th>Total</th>
                     </tr>
                     <tr>
                         <td></td>
@@ -507,6 +440,9 @@ a.email:after {
                     <h2>Notes</h2>
                 </div>
             </div>
+        </div>
+        <div id="footer">
+            <p><a href="http://github.com/l0b0/worktime">Worktime</a> &copy; 2010 Victor Engmark</p>
         </div>
     </body>
 </html>
