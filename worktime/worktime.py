@@ -80,7 +80,7 @@ HELP = 'See --help for more information.'
 DATE_FORMAT = '%Y-%m-%d'
 
 
-def worktime(start, end, days, directory):
+def worktime(start, end, days, output):
     """
     Create worktime log files.
 
@@ -101,31 +101,26 @@ def worktime(start, end, days, directory):
     framework = open(join(template_dir, template + '.xhtml')).read()
 
     day_diff = end - start
+
+    pages = ''
     for index in range(day_diff.days):
         current = start + timedelta(days = index)
         if current.weekday() not in days:
-            print 'Skipping %s' % WEEKDAYS[current.weekday()]
             continue
-
-        # Establish output file
-        output_path = join(directory, current.strftime(DATE_FORMAT) + '.xhtml')
-        if exists(output_path):
-            print 'Skipping existing worktime file %s' % output_path
-            continue
-
-        output_file = open(output_path, 'w')
 
         # Get template data
-        title = current.strftime('%A ' + DATE_FORMAT + ' (week %U)')
+        title = current.strftime('%A ' + DATE_FORMAT + ' (week %V)')
 
-        # Write to template
-        output_file.write(
-            framework % {
-                'title': title,
-                'css': css,
-                'css_print': css_print,
-                'contents': contents % {'title': title},
-                'footer': footer})
+        # Append to contents
+        pages += contents % {
+            'title': title,
+            'footer': footer}
+        
+    print >> output, framework % {
+        'title': title,
+        'css': css,
+        'css_print': css_print,
+        'contents': pages}
 
 
 def usage():
@@ -165,7 +160,7 @@ def main(argv=None):
 
             start = date(values[0], values[1], values[2])
         elif option in ('-e', '--end'):
-            values = value.split('-')
+            values = [int(val) for val in value.split('-')]
             if len(values) == 1:
                 # Missing month and day
                 values.extend([12, 31])
@@ -195,10 +190,13 @@ def main(argv=None):
             sys.stderr.write('Unhandled option %s\n' % option)
             return 2
 
-    assert len(args) == 1, 'You have to specify a target directory. %s' % HELP
-    directory = args[0]
+    assert len(args) < 2, 'You can only specify one output file. %s' % HELP
+    if len(args) == 1:
+        output = open(args[0], 'w')
+    else:
+        output = sys.stdout
 
-    worktime(start, end, days, directory)
+    worktime(start, end, days, output)
 
 
 if __name__ == '__main__':

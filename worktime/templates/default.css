@@ -11,14 +11,18 @@ body {
 
 /* Top-level divs */
 
-#log {
+.log {
     float: left;
     margin-right: 1em;
     }
 
-#footer {
+.footer {
     margin-top: 80em;
     font-size: 0.7em;
+    }
+
+.day {
+    page-break-after: always;
     }
 
 /* Text styles */
