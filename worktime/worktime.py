@@ -89,8 +89,16 @@ def worktime(start, end, days, directory):
     @param days: Iterable of weekdays to output
     @param directory: Where to put the log files
     """
-    template_file = open(join(dirname(__file__), 'template.xhtml'))
-    template = template_file.read()
+    template_dir = join(dirname(__file__), 'templates')
+    template = 'default'
+
+    contents = open(join(template_dir, template + '-contents.xhtml')).read()
+    css = open(join(template_dir, template + '.css')).read()
+    css_print = open(join(template_dir, template + '-print.css')).read()
+
+    footer = open(join(template_dir, 'footer.xhtml')).read()
+
+    framework = open(join(template_dir, template + '.xhtml')).read()
 
     day_diff = end - start
     for index in range(day_diff.days):
@@ -108,12 +116,16 @@ def worktime(start, end, days, directory):
         output_file = open(output_path, 'w')
 
         # Get template data
-        current_printable = current.strftime('%A ' + DATE_FORMAT)
+        title = current.strftime('%A ' + DATE_FORMAT + ' (week %U)')
 
         # Write to template
         output_file.write(
-            template % {
-                'date': current_printable})
+            framework % {
+                'title': title,
+                'css': css,
+                'css_print': css_print,
+                'contents': contents % {'title': title},
+                'footer': footer})
 
 
 def usage():
