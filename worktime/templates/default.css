@@ -9,6 +9,20 @@ body {
     font-size: 10pt;
     }
 
+/* Top-level divs */
+
+#log {
+    float: left;
+    margin-right: 1em;
+    }
+
+#footer {
+    margin-top: 80em;
+    font-size: 0.7em;
+    }
+
+/* Text styles */
+
 h1,
 h2,
 th,
@@ -30,24 +44,9 @@ h2 {
     font-size: 1.1em;
     }
 
+/* Tables top to bottom */
 table {
     border-collapse: collapse;
-    }
-
-th,
-td {
-    border: thin dotted #CCC;
-    height: 1em;
-    text-align: left;
-    padding-top: 0.1ex;
-    padding-right: 0.5ex;
-    padding-bottom: 0.1ex;
-    padding-left: 0.5ex;
-    }
-
-#log {
-    float: left;
-    margin-right: 1em;
     }
 
 col.reference {
@@ -58,13 +57,28 @@ col.time {
     width: 2em;
     }
 
+col.title {
+    width: 30em;
+    }
+
+th,
+td {
+    border: thin dotted #CCC;
+    height: 1em;
+    padding-top: 0.1ex;
+    padding-right: 0.5ex;
+    padding-bottom: 0.1ex;
+    padding-left: 0.5ex;
+    }
+
+th {
+    text-align: left;
+    border-bottom: thin #CCC solid;
+    }
+
 td {
     vertical-align: top;
     text-align: right;
-    }
-
-col.title {
-    width: 30em;
     }
 
 .core {
@@ -72,11 +86,6 @@ col.title {
     background: #e9e9e9;
     }
 
-.hour{
+.hour {
     border-top: thin #CCC solid;
-    }
-
-#footer {
-    margin-top: 80em;
-    font-size: 0.7em;
     }
