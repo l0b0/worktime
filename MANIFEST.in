@@ -1,1 +1,1 @@
-recursive-include worktime *.xhtml
+recursive-include worktime/templates *
