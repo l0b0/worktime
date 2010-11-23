@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+    color: black !important;
+    }
+
+a:after {
+    display: inline;
+    content: " &lt;" attr(href) "&gt;";
+    white-space: nowrap;
+    }
+
+a.email:after {
+    display: inline;
+    content: " &lt;" attr(title) "&gt;";
+    }

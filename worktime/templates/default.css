@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+body {
+    /* Readable small font */
+    font-family: "Palatino Linotype", Times, serif;
+    font-size: 10pt;
+    }
+
+h1,
+h2,
+th,
+td {
+    /* Stylish big font */
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-weight: bold;
+    }
+
+h1 {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 0;
+    }
+
+h2 {
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+    font-size: 1.1em;
+    }
+
+table {
+    border-collapse: collapse;
+    }
+
+th,
+td {
+    border: thin dotted #CCC;
+    height: 1em;
+    text-align: left;
+    padding-top: 0.1ex;
+    padding-right: 0.5ex;
+    padding-bottom: 0.1ex;
+    padding-left: 0.5ex;
+    }
+
+#log {
+    float: left;
+    margin-right: 1em;
+    }
+
+col.reference {
+    width: 8em;
+    }
+
+col.time {
+    width: 2em;
+}   
+
+col.title {
+    width: 30em;
+}
+
+.core {
+    /* Core hours */
+    background: #DDD;
+    }
+
+#footer {
+    margin-top: 80em;
+    font-size: 0.7em;
+    }
