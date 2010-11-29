@@ -67,7 +67,7 @@ col.title {
 
 th,
 td {
-    border: thin dotted #CCC;
+    border-right: thin dotted #CCC;
     height: 1em;
     padding-top: 0.1ex;
     padding-right: 0.5ex;
@@ -77,10 +77,11 @@ td {
 
 th {
     text-align: left;
-    border-bottom: thin #CCC solid;
+    border-bottom: thin solid #CCC;
     }
 
 td {
+    border-top: thin dotted #CCC;
     vertical-align: top;
     text-align: right;
     }
@@ -91,5 +92,5 @@ td {
     }
 
 .hour {
-    border-top: thin #CCC solid;
+    border-top: thin solid #CCC;
     }
