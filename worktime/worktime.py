@@ -113,14 +113,14 @@ def worktime(start, end, days, output):
 
         # Append to contents
         pages += contents % {
-            'title': title,
-            'footer': footer}
-        
+            'title': title}
+
     print >> output, framework % {
         'title': title,
         'css': css,
         'css_print': css_print,
-        'contents': pages}
+        'contents': pages,
+        'footer': footer}
 
 
 def usage():

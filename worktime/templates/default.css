@@ -40,6 +40,7 @@ td {
     }
 
 h1 {
+    clear: both;
     font-size: 1.2em;
     text-align: center;
     margin-top: 0;
