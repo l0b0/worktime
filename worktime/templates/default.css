@@ -16,11 +16,12 @@ body {
     margin-right: 1em;
     }
 
-.footer {
+#footer {
     position: fixed;
     right: 0;
     bottom: 0;
     font-size: 0.7em;
+    text-align: right;
     }
 
 .day {
