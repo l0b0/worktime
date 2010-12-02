@@ -99,3 +99,13 @@ td {
 .hour {
     border-top: thin solid #CCC;
     }
+
+/* Only borders on the inside */
+tr.hour td + td + td,
+tr td + td {
+    border-left: thin dotted #CCC;
+    }
+
+tr.hour td + td {
+    border-left: none;
+    }
