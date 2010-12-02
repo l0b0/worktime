@@ -40,17 +40,21 @@ td {
     letter-spacing: 0.06em;
     }
 
+h1,
+th {
+    text-align: center;
+    }
+
 h1 {
     clear: both;
     font-size: 1.2em;
-    text-align: center;
     margin-top: 0;
     }
 
 h2 {
     margin-top: 0.8em;
     margin-bottom: 0.2em;
-    font-size: 1.1em;
+    font-size: 1.2em;
     }
 
 /* Tables top to bottom */
