@@ -90,6 +90,7 @@ th {
 
 td {
     border-top: thin dotted #CCC;
+    border-bottom: thin dotted #CCC;
     vertical-align: top;
     text-align: right;
     }
