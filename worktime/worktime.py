@@ -5,7 +5,7 @@ NAME
        worktime - Generate daily log web pages
 
 SYNOPSIS
-       worktime [OPTION]... DIRECTORY
+       worktime [OPTION]...
 
 DESCRIPTION
        Creates a web page with a table on the left side showing the hours of
@@ -14,7 +14,7 @@ DESCRIPTION
 
        By default only today's log is created.
 
-       Logs are created in DIRECTORY.
+       Logs are printed to standard output.
 
        Web site: <http://github.com/l0b0/worktime>
 
@@ -37,16 +37,15 @@ DESCRIPTION
              Print this documentation and exit.
 
 EXAMPLES
-       worktime --end=2011-12-31 ~/work
-             Create a log file in ~/work for each day from today until
-             2011-12-31.
+       worktime --start=2011-01 --end=2011-01 > jan.xhtml
+             Create a log file jan.xhtml for January 2011.
 
-       worktime --start=2010-12 --end=2011-02 --weekends ~/work
-             Create a log file in ~/work for each Saturday and Sunday from
-             2010-12-01 through 2011-02-28.
+       worktime --start=2010-12 --end=2011-02 --weekends
+             Output a log file for each Saturday and Sunday from 2010-12-01
+             through 2011-02-28.
 
-       worktime --weekdays --start=2012 --end=2012 ~/project-X
-             Create a log file in ~/project-X for each week day of 2012.
+       worktime --weekdays --start=2012 --end=2012 > ~/project-X.xhtml
+             Create a log file ~/project-X.xhtml for each week day of 2012.
 """
 
 __author__ = 'Victor Engmark'
