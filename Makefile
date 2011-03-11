@@ -18,7 +18,7 @@ UPLOAD_OPTIONS = --sign --identity=$(GPG_ID)
 # System
 RM := /bin/rm -f
 
-RELEASE_TAG = v$(shell PYTHONPATH=. $(PYTHON_CMD) 'from mian.mian import __version__; print __version__')
+RELEASE_TAG = v$(shell PYTHONPATH=. $(PYTHON_CMD) 'from worktime.worktime import __version__; print __version__')
 
 .PHONY: all
 all: dist
