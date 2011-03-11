@@ -58,12 +58,12 @@ __license__ = 'GPL v3 or newer'
 from calendar import monthrange
 from datetime import date, timedelta
 from getopt import getopt, GetoptError
-from os.path import dirname, exists, join
+from os.path import dirname, join
 from signal import signal, SIGPIPE, SIG_DFL
 import sys
 
+#: Avoid 'Broken pipe' message when canceling piped command.
 signal(SIGPIPE, SIG_DFL)
-"""Avoid 'Broken pipe' message when canceling piped command."""
 
 WEEKDAYS = [
     'Monday',
@@ -103,7 +103,7 @@ def worktime(start, end, days, output):
 
     pages = ''
     for index in range(day_diff.days):
-        current = start + timedelta(days = index)
+        current = start + timedelta(days=index)
         if current.weekday() not in days:
             continue
 
@@ -134,7 +134,7 @@ def main(argv=None):
         argv = sys.argv
 
     start = date.today()
-    end = start + timedelta(days = 1)
+    end = start + timedelta(days=1)
     days = range(7)
 
     try:
@@ -155,7 +155,8 @@ def main(argv=None):
     for option, value in opts:
         if option in ('-s', '--start'):
             values = [int(val) for val in value.split('-')]
-            values.extend([1, 1][0:3-len(values)]) # Missing month and/or day
+            values.extend(
+                    [1, 1][0:3 - len(values)])  # Missing month and/or day
 
             start = date(values[0], values[1], values[2])
         elif option in ('-e', '--end'):
@@ -168,7 +169,7 @@ def main(argv=None):
                 values.append(monthrange(values[0], values[1])[1])
 
             # Go to start of next day
-            end = date(values[0], values[1], values[2]) + timedelta(days = 1)
+            end = date(values[0], values[1], values[2]) + timedelta(days=1)
         elif option in ('-d', '--days'):
             values = value.split(', ')
 

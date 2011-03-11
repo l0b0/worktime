@@ -23,7 +23,6 @@ from worktime import worktime
 
 class TestGenerator(unittest.TestCase):
     """Tests that generate output."""
-    # pylint: disable-msg=R0904
 
     def test_no_options(self):
         """Use only default options."""

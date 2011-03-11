@@ -4,21 +4,21 @@ Setup configuration
 """
 
 from setuptools import find_packages, setup
-from worktime.worktime import __author__ as module_author, __doc__ as module_doc, __email__ as module_email, __license__ as module_license, __maintainer__ as module_maintainer
+from worktime import worktime as package
 
 setup(
-    name = 'worktime',
-    version = '0.3.1',
-    description = 'Generate XHTML daily calendar',
-    long_description = module_doc,
-    url = 'http://github.com/l0b0/worktime',
-    keywords = 'log calendar generator',
-    packages = find_packages(exclude=['tests']),
-    install_requires = [],
-    include_package_data = True,
-    entry_points = {
+    name='worktime',
+    version='0.3.1',
+    description='Generate XHTML daily calendar',
+    long_description=package.__doc__,
+    url='http://github.com/l0b0/worktime',
+    keywords='log calendar generator',
+    packages=find_packages(exclude=['tests']),
+    install_requires=[],
+    include_package_data=True,
+    entry_points={
         'console_scripts': ['worktime = worktime.worktime:main']},
-    classifiers = [
+    classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: End Users/Desktop',
@@ -29,12 +29,12 @@ setup(
         'Topic :: Office/Business',
         'Topic :: Other/Nonlisted Topic',
     ],
-    test_suite = 'tests.tests',
-    author = module_author,
-    author_email = module_email,
-    maintainer = module_maintainer,
-    maintainer_email = module_email,
-    download_url = 'http://github.com/l0b0/worktime',
-    platforms = ['POSIX', 'Windows'],
-    license = module_license,
+    test_suite='tests.tests',
+    author=package.__author__,
+    author_email=package.__email__,
+    maintainer=package.__maintainer__,
+    maintainer_email=package.__email__,
+    download_url='http://github.com/l0b0/worktime',
+    platforms=['POSIX', 'Windows'],
+    license=package.__license__,
     )
