@@ -3,19 +3,17 @@ worktime - Generate daily log web page
 
 [Example file](https://github.com/l0b0/worktime/wiki/2010-12.xhtml)
 
-Installation
-------------
+Installation/upgrade
+--------------------
 
-`sudo easy_install worktime`
-
-Upgrade
--------
-
-`sudo easy_install -U worktime`
+    sudo pip install -U worktime
 
 Usage
 -----
-See `worktime --help`.
+
+See
+
+    worktime --help
 
 Examples
 --------
