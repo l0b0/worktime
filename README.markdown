@@ -3,10 +3,11 @@ worktime - Generate daily log web page
 
 [Example file](https://github.com/l0b0/worktime/wiki/2010-12.xhtml)
 
-Installation/upgrade
---------------------
+Installation
+------------
 
-    sudo pip install -U worktime
+    make
+    sudo make install
 
 Usage
 -----
