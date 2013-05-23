@@ -49,7 +49,7 @@ EXAMPLES
 """
 
 __author__ = 'Victor Engmark'
-__copyright__ = 'Copyright (C) 2010 Victor Engmark'
+__copyright__ = 'Copyright (C) 2010-2013 Victor Engmark'
 __credits__ = ['Victor Engmark']
 __maintainer__ = 'Victor Engmark'
 __email__ = 'victor.engmark@gmail.com'
@@ -65,7 +65,7 @@ import sys
 #: Avoid 'Broken pipe' message when canceling piped command.
 signal(SIGPIPE, SIG_DFL)
 
-WEEKDAYS = [
+DAYS = [
     'Monday',
     'Tuesday',
     'Wednesday',
@@ -177,7 +177,7 @@ def main(argv=None):
             days = []
             for index in range(len(values)):
                 try:
-                    days[index] = WEEKDAYS.index(values[index])
+                    days[index] = DAYS.index(values[index])
                 except ValueError, err:
                     print 'Unknown weekday %s. %s' % (values[index], HELP)
         elif option in ('-w', '--weekdays'):
